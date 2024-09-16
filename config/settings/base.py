@@ -45,7 +45,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    "core.apps.CoreConfig",
 ]
+# Customer User Model
+AUTH_USER_MODEL = "core.User"
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -178,3 +182,9 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+def load_settings(setting):
+    try:
+        exec(f"from .{setting} import *")
+    except ImportError as e:
+        print(f"Could not import {setting}: {e}")
