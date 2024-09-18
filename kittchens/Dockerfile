@@ -17,11 +17,11 @@ ENV PYTHONUNBUFFERED=1 \
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
-    libpq-dev \
-    libmariadbclient-dev \
     libjpeg62-turbo-dev \
-    zlib1g-dev \
+    libmariadbclient-dev \
+    libpq-dev \
     libwebp-dev \
+    zlib1g-dev
  && rm -rf /var/lib/apt/lists/*
 
 # Install the application server.
