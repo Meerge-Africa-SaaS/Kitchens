@@ -59,7 +59,7 @@ function showFAQ(faqId) {
 
 document.addEventListener("DOMContentLoaded", function () {
   var options = {
-    strings: ["When", "Where"],
+    strings: ["", "How", "When", "Where"],
     typeSpeed: 50,
     backSpeed: 25,
     backDelay: 1000,
