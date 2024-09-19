@@ -59,11 +59,7 @@ function showFAQ(faqId) {
 
 document.addEventListener("DOMContentLoaded", function () {
   var options = {
-    strings: [
-      "How you want it...",
-      "When you want it...",
-      "Where you want it...",
-    ],
+    strings: ["When", "Where"],
     typeSpeed: 50,
     backSpeed: 25,
     backDelay: 1000,
@@ -73,12 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   var typed = new Typed("#typed-output", options);
-
-  // Apply styles to spans manually if needed
   typed.options.onStringTyped = function (pos, self) {
     document.querySelectorAll("#typed-output span").forEach(function (span) {
-      span.style.color = "#fd0000"; // Apply your styling
-      span.style.fontWeight = "bold"; // Ensure font weight
+      span.style.color = "#fd0000";
+      span.style.fontWeight = "bold";
     });
   };
 });

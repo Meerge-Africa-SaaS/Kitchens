@@ -91,19 +91,19 @@ nav {
   position: relative;
 }
 .icon {
-  position: absolute; /* Position relative to the .second-sec section */
-  width: 120px; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
+  position: absolute;
+  width: 120px;
+  height: auto;
 }
 
 .icon1 {
-  top: 20%; /* Adjust vertical position */
-  left: 58%; /* Adjust horizontal position */
+  top: 20%;
+  left: 58%;
 }
 
 .icon2 {
-  bottom: 25%; /* Adjust vertical position */
-  right: 58%; /* Adjust horizontal position */
+  bottom: 25%;
+  right: 58%;
 }
 .header {
   font-family: Poppins;
@@ -236,7 +236,7 @@ nav {
 }
 
 .faq-item.active {
-  background-color: #ffffff; /* Highlighted background */
+  background-color: #ffffff;
   border-color: #ffffff;
   color: #000000;
   font-family: Poppins;
