@@ -1,9 +1,8 @@
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   const navbar = document.querySelector("nav");
   const scrollTrigger = 50;
+
+  document.documentElement.style.scrollPaddingTop = "130px";
 
   function handleScroll() {
     if (window.scrollY > scrollTrigger) {
@@ -14,9 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", handleScroll);
+  setTimeout(() => {
+    window.scrollTo(0, 100);
+    handleScroll();
+  }, 1000);
+};
 
-  handleScroll();
-});
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
 
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
@@ -35,12 +39,12 @@ function showFAQ(faqId) {
 
   if (faqAnswers[faqId]) {
     responseContainer.innerHTML = `
-        <h2 class="text-2xl font-bold mb-4" style="color:#fd0000">We replied!</h2>
+        <h2 class="text-5xl font-bold mb-4" style="color:#fd0000">We replied:</h2>
         <p class="text-gray-700 mt-10">${faqAnswers[faqId]}</p>
       `;
   } else {
     responseContainer.innerHTML = `
-        <h2 class="text-2xl font-bold mb-4" style="color:#fd0000">We replied!</h2>
+        <h2 class="text-5xl font-bold mb-4" style="color:#fd0000">We replied:</h2>
         <p class="text-gray-700">Sorry, no information available for this question.</p>
       `;
   }
@@ -58,21 +62,11 @@ function showFAQ(faqId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var options = {
-    strings: ["", "How", "When", "Where"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 1000,
-    startDelay: 500,
+  var typed = new Typed("#typed-output", {
+    strings: ["How", "When", "Where"],
+    typeSpeed: 100,
+    backSpeed: 50,
     loop: true,
     showCursor: false,
-  };
-
-  var typed = new Typed("#typed-output", options);
-  typed.options.onStringTyped = function (pos, self) {
-    document.querySelectorAll("#typed-output span").forEach(function (span) {
-      span.style.color = "#fd0000";
-      span.style.fontWeight = "bold";
-    });
-  };
+  });
 });

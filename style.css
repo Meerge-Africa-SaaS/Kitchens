@@ -13,13 +13,18 @@ nav {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.nav-scrolled {
+nav .nav-scrolled {
   background-color: white;
-  color: black;
+  color: #000000;
 }
 
 .nav-scrolled .links a {
-  color: black;
+  color: #000000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
 }
 .download-btn {
   color: #fd0000;
@@ -46,10 +51,15 @@ nav {
   font-family: Poppins;
   font-size: 55px;
   font-weight: 700;
-  line-height: 82.5px;
+  line-height: 40px;
   text-align: center;
   color: #ffffff;
-  height: 5rem;
+  height: 4rem;
+  display: inline-block;
+  width: 200px;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 #typed-ouput span {
   color: #fd0000;
@@ -233,6 +243,9 @@ nav {
   padding: 0 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .faq-item.active {
@@ -246,17 +259,17 @@ nav {
   text-align: left;
 }
 
-.faq-item .love-icon {
+/* .faq-item .love-icon {
   position: absolute;
   background-image: url("assets/love-icon.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-}
+} */
 
-.faq-item.active .love-icon {
+/* .faq-item.active .love-icon {
   display: block;
-}
+} */
 .copyright-block {
   display: flex;
   flex-direction: column;

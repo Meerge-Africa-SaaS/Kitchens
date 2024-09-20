@@ -37,7 +37,7 @@
           </div>
         </nav>
     
-        <!-- Mobile Menu (hidden by default) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
           <ul class="space-y-4 p-4 bg-gray-100">
             <li><a href="#" class="block text-gray-700 hover:text-gray-900">Products</a></li>
@@ -47,9 +47,10 @@
           </ul>
         </div>
     </nav>
+
     <section id="hero-sec" class="hero-sec w-full  bg-cover bg-center h-screen pt-52">
         <p class="hero-bold-txt ">Experience your kind of taste</p>
-        <p class="hero-bold-txt"><span style="color: #fd0000;" id="typed-output">How</span> you want it...</p>
+        <p class="hero-bold-txt"><span style="color: #fd0000;" id="typed-output"></span> you want it...</p>
         <p class="hero-sub-txt pt-5">From our seasoned chefs on standby to your favorite restuarants, enjoy good deals on great meals and pasteries</p>
         <div class="flex pt-6"><img class="mx-5" src="assets/App-Store-btn.svg" alt="app store button">
             <img src="assets/google-play-btn.svg" alt="google-play-btn">
@@ -62,25 +63,25 @@
         <img src="assets/love 1.png" class="icon icon1" alt="Icon 1">
         <img src="assets/wow 1.png" class="icon icon2" alt="Icon 2">
         <div class="overlay-sec ">
-            <div class="overlay-inner pt-16">
+            <div class="overlay-inner pt-16 pb-20">
                 <p id="products" class="header">Our Products/Channels</p>
                 <div class=" services-block flex justify-around pt-16">
                     <div>
                         <img src="assets/pasteries-img.png" alt="pasteries">
                         <h2 class="header my-3">Kittchen’s Pastries</h2>
                         <p class="paragraph">Delight your taste with the variety of our pastry offerings. Visit our roadside tuck shop and grab a healthy bite on your way to anywhere in your city.</p>
-                        <a href="#">Get the app</a>
+                        <h2 style="text-align: left;"><a href="#">Get the app</a></h2>
                     </div>
                     <div><img src="assets/kittchens-pack.png" alt="kittchens pack">
                         <h2 class="header my-3">Kittchen’s Go</h2>
                         <p class="paragraph">Deliver meals in your city and get paid for it. Join our team of savvy delivery agents on standby to help move stuff from favorite food outlets to customer doorsteps</p>
-                        <a href="#">Behind A Rider</a>
+                        <h2 class="" style="text-align: left;"><a href="#">Behind A Rider</a></h2>
                     </div>
                     <div>
                         <img src="assets/cloud-kittchens.png" alt="cloud kittchens">
                         <h2 class="header my-3">Cloud Kittchens</h2>
                         <p class="paragraph">Seasoned chefs use our state of the art on-site Kittchen’s to run their business. Take advantage of our exquisite locations on a plan that works for you.</p>
-                        <a href="#">Book A Space</a>
+                        <h2 class="" style="text-align: left;"><a href="#">Book A Space</a></h2>
                     </div>
                 </div>
             </div>
@@ -98,18 +99,43 @@
             <div class="faq-list w-1/3 space-y-4">
               <header class="text-xl font-bold text-white mb-4">You asked.</header>
               <ul class="space-y-4">
-                <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="1" onclick="showFAQ(1)">What is Cloud Kittchen’s?<img class="pl-10" src="assets/love-icon.png"></button></li>
-                <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="2" onclick="showFAQ(2)">How does the Kittchen’s app work?</button></li>
-                <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="3" onclick="showFAQ(3)">Where can I find Kittchen’s Pastries?</button></li>
-                <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="4" onclick="showFAQ(4)">How do I become a rider on Kittchen’s Go?</button></li>
-                <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="5" onclick="showFAQ(5)">Can I list my food spot on Kittchen’s?</button></li>
+                <li>
+                  <button class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center" data-faq-id="1" onclick="showFAQ(1)" aria-expanded="false" aria-controls="faq1">
+                    <span>What is Cloud Kittchen’s?</span>
+                    <img class="pl-2" src="assets/love-icon.png" alt="Love Icon">
+                  </button>
+                </li>
+                <li>
+                  <button class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center" data-faq-id="2" onclick="showFAQ(2)" aria-expanded="false" aria-controls="faq2">
+                    <span>How does the Kittchen’s app work?</span>
+                    <img class="pl-2" src="assets/love-icon.png" alt="Love Icon">
+                  </button>
+                </li>
+                <li>
+                  <button class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center" data-faq-id="3" onclick="showFAQ(3)" aria-expanded="false" aria-controls="faq3">
+                    <span>Where can I find Kittchen’s Pastries?</span>
+                    <img class="pl-2" src="assets/love-icon.png" alt="Love Icon">
+                  </button>
+                </li>
+                <li>
+                  <button class="faq-item inline-block w-full text-left text-white hover:text-gray-200 flex justify-between items-center" data-faq-id="4" onclick="showFAQ(4)" aria-expanded="false" aria-controls="faq4">
+                    <span>How do I become a rider on Kittchen’s Go?</span>
+                    <img class="pl-2" src="assets/love-icon.png" alt="Love Icon">
+                  </button>
+                </li>
+                <li>
+                  <button class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center" data-faq-id="5" onclick="showFAQ(5)" aria-expanded="false" aria-controls="faq5">
+                    <span>Can I list my food spot on Kittchen’s?</span>
+                    <img class="pl-2" src="assets/love-icon.png" alt="Love Icon">
+                  </button>
+                </li>
               </ul>
             </div>
           
             
             <div class="faq-response-container">
                 <div class="faq-response-content">
-                  <h2 class="text-2xl font-bold mb-4" style="color: #fd0000;">We replied:</h2>
+                  <h2 class="text-5xl font-bold mb-4" style="color: #fd0000;">We replied:</h2>
                 </div>
               </div>
           </section>
