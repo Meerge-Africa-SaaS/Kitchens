@@ -1,21 +1,220 @@
-{% extends "base.html" %}
-{% load static %}
+{% load static %} <!-- Load the static tag -->
 
-{% block body_class %}template-homepage{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kittchens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
 
-{% block extra_css %}
+    .nav-scrolled {
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: background-color 0.3s ease;
+    }
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
+    .hero-bold-txt {
+      font-size: 3rem;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+    }
 
-{% block content %}
+    .hero-sub-txt {
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+    .overlay-txt {
+      color: white;
+      font-size: 1.25rem;
+      text-align: center;
+    }
 
-{% endblock content %}
+    .icon {
+      width: 50px;
+      position: absolute;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .icon1 {
+      top: 60%;
+      left: 10%;
+    }
+
+    .icon2 {
+      top: 30%;
+      left: 80%;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .faq-item {
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .faq-response-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4">
+    <div class="logo cursor-pointer">
+      <a href="#hero-sec"><img src="{% static 'assets/kittchens-logo.svg' %}" class="ml-6" style="width: 100%;" /></a>
+    </div>
+    <div class="flex items-center space-x-8">
+      <ul class="hidden md:flex space-x-6 text-white">
+        <li><a href="#products" class="hover:text-[#fd0000]">Products</a></li>
+        <li><a href="#pricing" class="hover:text-[#fd0000]">Pricing</a></li>
+        <li><a href="#partners" class="hover:text-[#fd0000]">Partners</a></li>
+      </ul>
+      <button class="hidden md:block download-btn px-4 py-2 rounded-lg bg-white text-[#fd0000] hover:bg-[#fd0000] hover:text-white">
+        Download App
+      </button>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden">
+    <ul class="space-y-4 p-4 bg-gray-100">
+      <li><a href="#products" class="block text-black hover:text-gray-900">Products</a></li>
+      <li><a href="#pricing" class="block text-black hover:text-gray-900">Pricing</a></li>
+      <li><a href="#partners" class="block text-black hover:text-gray-900">Partners</a></li>
+      <li><button class="bg-[#fd0000] text-white w-full py-2 rounded-lg hover:bg-red-600">Download App</button></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero-sec" class="w-full bg-cover bg-center h-screen" style="background-image: url('{% static 'assets/hero-bg.jpg' %}')">
+    <div class="text-center pt-52">
+      <p class="hero-bold-txt">Experience your kind of taste</p>
+      <p class="hero-bold-txt">
+        <span style="color: #fd0000;" id="typed-output">How</span> you want it...
+      </p>
+      <p class="hero-sub-txt pt-5">From our seasoned chefs on standby to your favorite restaurants, enjoy good deals on great meals and pastries.</p>
+      <div class="flex justify-center pt-6">
+        <img class="mx-5" src="{% static 'assets/App-Store-btn.svg' %}" alt="App Store" />
+        <img src="{% static 'assets/google-play-btn.svg' %}" alt="Google Play" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Products/Channels Section -->
+  <section class="second-sec py-20 bg-red-500">
+    <div class="text-center">
+      <p class="text-white text-4xl font-bold mb-10">Download the app now!</p>
+      <img src="{% static 'assets/mobile-app-img.svg' %}" alt="mobile app" class="mx-auto">
+    </div>
+    <div class="relative mt-20">
+      <img src="{% static 'assets/love 1.png' %}" class="icon icon1" alt="Icon 1">
+      <img src="{% static 'assets/wow 1.png' %}" class="icon icon2" alt="Icon 2">
+    </div>
+    <div class="mt-10 text-center">
+      <p id="products" class="text-3xl font-bold text-white">Our Products/Channels</p>
+      <div class="flex justify-around py-16">
+        <div>
+          <img src="{% static 'assets/pasteries-img.png' %}" alt="Pastries" />
+          <h2 class="text-2xl font-semibold text-white mt-3">Kittchen’s Pastries</h2>
+          <p class="text-white">Delight your taste with our pastry offerings. Visit our roadside tuck shop for a healthy bite on your way.</p>
+          <a href="#" class="text-white underline">Get the app</a>
+        </div>
+        <div>
+          <img src="{% static 'assets/kittchens-pack.png' %}" alt="Kittchens Pack" />
+          <h2 class="text-2xl font-semibold text-white mt-3">Kittchen’s Go</h2>
+          <p class="text-white">Deliver meals in your city. Join our delivery team to move food from outlets to doorsteps.</p>
+          <a href="#" class="text-white underline">Become A Rider</a>
+        </div>
+        <div>
+          <img src="{% static 'assets/cloud-kittchens.png' %}" alt="Cloud Kittchens" />
+          <h2 class="text-2xl font-semibold text-white mt-3">Cloud Kittchens</h2>
+          <p class="text-white">Run your business using our state-of-the-art kitchen locations on a flexible plan.</p>
+          <a href="#" class="text-white underline">Book A Space</a>
+        </div>
+      </div>
+      <p class="text-white overlay-txt my-7">Tasty meals, just around the corner.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-black py-16">
+    <div class="w-11/12 mx-auto p-6 space-x-6 rounded-lg bg-red-600 flex">
+      <div class="faq-list w-1/3 space-y-4">
+        <header class="text-xl font-bold text-white mb-4">You asked.</header>
+        <ul class="space-y-3">
+          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="1" onclick="showFAQ(1)">What is Cloud Kittchens?</button></li>
+          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="2" onclick="showFAQ(2)">How do I order food?</button></li>
+          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="3" onclick="showFAQ(3)">What delivery fees are associated?</button></li>
+          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="4" onclick="showFAQ(4)">How do I become a rider?</button></li>
+        </ul>
+      </div>
+      <div class="faq-response-content w-2/3 text-left">
+        <p class="faq-response text-white">Cloud Kittchens enables restaurateurs and entrepreneurs to access fully equipped kitchens to run delivery-based businesses without the cost of full restaurant operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showFAQ(id) {
+      const faqContent = document.querySelector('.faq-response');
+      const faqResponses = {
+        1: "Cloud Kittchens enables restaurateurs and entrepreneurs to access fully equipped kitchens to run delivery-based businesses without the cost of full restaurant operations.",
+        2: "The Kittchen’s app connects you with food vendors and chefs offering a variety of meals and pastries in your area.",
+        3: "Delivery fees vary based on your location and the distance between the restaurant and delivery point.",
+        4: "To become a rider, simply apply through the Kittchen’s app, and we'll guide you through the steps."
+      };
+      faqContent.textContent = faqResponses[id];
+    }
+
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    });
+
+    var typed = new Typed('#typed-output', {
+      strings: ['Whenever'],
+      typeSpeed: 100,
+      loop: true
+    });
+  </script>
+</body>
+</html>
