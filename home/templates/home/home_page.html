@@ -1,220 +1,208 @@
-{% load static %} <!-- Load the static tag -->
 
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kittchens</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .nav-scrolled {
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: background-color 0.3s ease;
-    }
-
-    .hero-bold-txt {
-      font-size: 3rem;
-      font-weight: 600;
-      color: white;
-      text-align: center;
-    }
-
-    .hero-sub-txt {
-      font-size: 1.5rem;
-      color: #fff;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .overlay-txt {
-      color: white;
-      font-size: 1.25rem;
-      text-align: center;
-    }
-
-    .icon {
-      width: 50px;
-      position: absolute;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .icon1 {
-      top: 60%;
-      left: 10%;
-    }
-
-    .icon2 {
-      top: 30%;
-      left: 80%;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .faq-item {
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .faq-response-content {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 0.75rem;
-    }
-  </style>
 </head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock extra_css %}
 
-<body class="bg-gray-100">
-
-  <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4">
+{% block content %}
+<body class="hero-sec">
+  <nav class="bg-transparent nav-scrolled fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4">
     <div class="logo cursor-pointer">
-      <a href="#hero-sec"><img src="{% static 'assets/kittchens-logo.svg' %}" class="ml-6" style="width: 100%;" /></a>
+      <a href="#hero-sec"><img src="../../static/assets/kittchen2-logo.png"class="ml-6 " style="width: 100%;"/></a>
     </div>
-    <div class="flex items-center space-x-8">
-      <ul class="hidden md:flex space-x-6 text-white">
-        <li><a href="#products" class="hover:text-[#fd0000]">Products</a></li>
-        <li><a href="#pricing" class="hover:text-[#fd0000]">Pricing</a></li>
-        <li><a href="#partners" class="hover:text-[#fd0000]">Partners</a></li>
-      </ul>
-      <button class="hidden md:block download-btn px-4 py-2 rounded-lg bg-white text-[#fd0000] hover:bg-[#fd0000] hover:text-white">
+    <div class="flex items-center space-x-32">
+    <ul class="links hidden md:flex space-x-6 text-gray-700">
+      <li><a href="#products" class="hover:text-[#fd0000]">Products</a></li>
+      <li><a href="#pricing" class="hover:text-[#fd0000]">Pricing</a></li>
+      <li><a href="#partners" class="hover:text-[#fd0000]">Partners</a></li>
+    </ul>
+    <div class="hidden md:block">
+      <button
+        class="download-btn px-4 py-2 rounded-lg hover:bg-[#fd0000] hover:text-white">
         Download App
       </button>
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden">
-    <ul class="space-y-4 p-4 bg-gray-100">
-      <li><a href="#products" class="block text-black hover:text-gray-900">Products</a></li>
-      <li><a href="#pricing" class="block text-black hover:text-gray-900">Pricing</a></li>
-      <li><a href="#partners" class="block text-black hover:text-gray-900">Partners</a></li>
-      <li><button class="bg-[#fd0000] text-white w-full py-2 rounded-lg hover:bg-red-600">Download App</button></li>
-    </ul>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero-sec" class="w-full bg-cover bg-center h-screen" style="background-image: url('{% static 'assets/hero-bg.jpg' %}')">
-    <div class="text-center pt-52">
-      <p class="hero-bold-txt">Experience your kind of taste</p>
-      <p class="hero-bold-txt">
-        <span style="color: #fd0000;" id="typed-output">How</span> you want it...
-      </p>
-      <p class="hero-sub-txt pt-5">From our seasoned chefs on standby to your favorite restaurants, enjoy good deals on great meals and pastries.</p>
-      <div class="flex justify-center pt-6">
-        <img class="mx-5" src="{% static 'assets/App-Store-btn.svg' %}" alt="App Store" />
-        <img src="{% static 'assets/google-play-btn.svg' %}" alt="Google Play" />
-      </div>
     </div>
-  </section>
-
-  <!-- Products/Channels Section -->
-  <section class="second-sec py-20 bg-red-500">
-    <div class="text-center">
-      <p class="text-white text-4xl font-bold mb-10">Download the app now!</p>
-      <img src="{% static 'assets/mobile-app-img.svg' %}" alt="mobile app" class="mx-auto">
-    </div>
-    <div class="relative mt-20">
-      <img src="{% static 'assets/love 1.png' %}" class="icon icon1" alt="Icon 1">
-      <img src="{% static 'assets/wow 1.png' %}" class="icon icon2" alt="Icon 2">
-    </div>
-    <div class="mt-10 text-center">
-      <p id="products" class="text-3xl font-bold text-white">Our Products/Channels</p>
-      <div class="flex justify-around py-16">
-        <div>
-          <img src="{% static 'assets/pasteries-img.png' %}" alt="Pastries" />
-          <h2 class="text-2xl font-semibold text-white mt-3">Kittchen’s Pastries</h2>
-          <p class="text-white">Delight your taste with our pastry offerings. Visit our roadside tuck shop for a healthy bite on your way.</p>
-          <a href="#" class="text-white underline">Get the app</a>
+         <!-- Mobile  -->
+         <div class="md:hidden">
+          <button id="menu-btn" class="text-gray-700 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
         </div>
-        <div>
-          <img src="{% static 'assets/kittchens-pack.png' %}" alt="Kittchens Pack" />
-          <h2 class="text-2xl font-semibold text-white mt-3">Kittchen’s Go</h2>
-          <p class="text-white">Deliver meals in your city. Join our delivery team to move food from outlets to doorsteps.</p>
-          <a href="#" class="text-white underline">Become A Rider</a>
-        </div>
-        <div>
-          <img src="{% static 'assets/cloud-kittchens.png' %}" alt="Cloud Kittchens" />
-          <h2 class="text-2xl font-semibold text-white mt-3">Cloud Kittchens</h2>
-          <p class="text-white">Run your business using our state-of-the-art kitchen locations on a flexible plan.</p>
-          <a href="#" class="text-white underline">Book A Space</a>
-        </div>
-      </div>
-      <p class="text-white overlay-txt my-7">Tasty meals, just around the corner.</p>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="bg-black py-16">
-    <div class="w-11/12 mx-auto p-6 space-x-6 rounded-lg bg-red-600 flex">
-      <div class="faq-list w-1/3 space-y-4">
-        <header class="text-xl font-bold text-white mb-4">You asked.</header>
-        <ul class="space-y-3">
-          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="1" onclick="showFAQ(1)">What is Cloud Kittchens?</button></li>
-          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="2" onclick="showFAQ(2)">How do I order food?</button></li>
-          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="3" onclick="showFAQ(3)">What delivery fees are associated?</button></li>
-          <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="4" onclick="showFAQ(4)">How do I become a rider?</button></li>
+      </nav>
+  
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="space-y-4 p-4 bg-gray-100">
+          <li><a href="#" class="block text-gray-700 hover:text-gray-900">Products</a></li>
+          <li><a href="#" class="block text-gray-700 hover:text-gray-900">Pricing</a></li>
+          <li><a href="#" class="block text-gray-700 hover:text-gray-900">Partners</a></li>
+          <li><button class="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-600">Download App</button></li>
         </ul>
       </div>
-      <div class="faq-response-content w-2/3 text-left">
-        <p class="faq-response text-white">Cloud Kittchens enables restaurateurs and entrepreneurs to access fully equipped kitchens to run delivery-based businesses without the cost of full restaurant operations.</p>
+  </nav>
+  <section id="hero-sec" class="flex flex-col items-center justify-center w-full bg-[url('../../static/assets/hero-img.png')] bg-cover bg-center h-screen pt-52">
+      <p class="hero-bold-txt ">Experience your kind of taste</p>
+      <p class="hero-bold-txt"><span style="color: #fd0000;" id="typed-output">How</span> you want it...</p>
+      <p class="hero-sub-txt pt-5">From our seasoned chefs on standby to your favorite restuarants, enjoy good deals on great meals and pasteries</p>
+      <div class="flex pt-6"><img class="mx-5" src="../../static/assets/app-buttons.png" alt="app store button">
+          <img src="../../static/assets/playstore-button.png" alt="google-play-btn">
       </div>
-    </div>
+   
+  </section>
+  <section class="second-sec pt-20">
+      <p class="header">Download the app now!</p>
+      <img src="../../static/assets/kittchen-app.png" alt="mobile app image">
+      <img src="../../static/assets/love 1 (1).png" class="icon icon1" alt="Icon 1">
+      <img src="../../static/assets/wow 1.png" class="icon icon2" alt="Icon 2">
+      <div class="overlay-sec ">
+          <div class="overlay-inner pt-16">
+              <p id="products" class="header">Our Products/Channels</p>
+              <div class=" services-block flex justify-around pt-16">
+                  <div>
+                      <img src="../../static/assets/kittchen-pack.png" alt="pasteries">
+                      <h2 class="header my-3">Kittchen’s Pastries</h2>
+                      <p class="paragraph">Delight your taste with the variety of our pastry offerings. Visit our roadside tuck shop and grab a healthy bite on your way to anywhere in your city.</p>
+                      <a href="#">Get the app</a>
+                  </div>
+                  <div><img src="../../static/assets/kittchen-gos.png" alt="kittchens pack">
+                      <h2 class="header my-3">Kittchen’s Go</h2>
+                      <p class="paragraph">Deliver meals in your city and get paid for it. Join our team of savvy delivery agents on standby to help move stuff from favorite food outlets to customer doorsteps</p>
+                      <a href="#">Behind A Rider</a>
+                  </div>
+                  <div>
+                      <img src="../../static/assets/cloud-kittchens.png" alt="cloud kittchens">
+                      <h2 class="header my-3">Cloud Kittchens</h2>
+                      <p class="paragraph">Seasoned chefs use our state of the art on-site Kittchen’s to run their business. Take advantage of our exquisite locations on a plan that works for you.</p>
+                      <a href="#">Book A Space</a>
+                  </div>
+              </div>
+          </div>
+          <p class="overlay-txt my-7">Tasty meals, just around the corner.</p>
+          <div class="flex pt-6"><img class="mx-5" src="../../static/assets/app-buttons.png" alt="app store button">
+              <img src="../../static/assets/playstore-button.png" alt="google-play-btn">
+          </div>
+      </div>
+  </section>
+<div style="height: 50vh;"></div>
+  <section class="third-sec bg-black w-full" style="height: 100vh;" >
+
+      <section style="background: #fd0000;" class="faq flex rounded-lg w-11/12 mx-auto p-6 space-x-6">
+          
+          <div class="faq-list w-1/3 space-y-4">
+            <header class="text-xl font-bold text-white mb-4">You asked.</header>
+            <ul class="space-y-4">
+              <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="1" onclick="showFAQ(1)">What is Cloud Kittchen’s?
+              </button></li>
+              <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="2" onclick="showFAQ(2)">How does the Kittchen’s app work?</button></li>
+              <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="3" onclick="showFAQ(3)">Where can I find Kittchen’s Pastries?</button></li>
+              <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="4" onclick="showFAQ(4)">How do I become a rider on Kittchen’s Go?</button></li>
+              <li><button class="faq-item w-full text-left text-white hover:text-gray-200" data-faq-id="5" onclick="showFAQ(5)">Can I list my food spot on Kittchen’s?</button></li>
+            </ul>
+          </div>
+        
+          
+          <div class="faq-response-container">
+              <div class="faq-response-content">
+                <h2 class="text-2xl font-bold mb-4" style="color: #fd0000;">We replied:</h2>
+              </div>
+            </div>
+        </section>
   </section>
 
-  <script>
-    function showFAQ(id) {
-      const faqContent = document.querySelector('.faq-response');
-      const faqResponses = {
-        1: "Cloud Kittchens enables restaurateurs and entrepreneurs to access fully equipped kitchens to run delivery-based businesses without the cost of full restaurant operations.",
-        2: "The Kittchen’s app connects you with food vendors and chefs offering a variety of meals and pastries in your area.",
-        3: "Delivery fees vary based on your location and the distance between the restaurant and delivery point.",
-        4: "To become a rider, simply apply through the Kittchen’s app, and we'll guide you through the steps."
-      };
-      faqContent.textContent = faqResponses[id];
-    }
 
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('nav-scrolled');
-      } else {
-        nav.classList.remove('nav-scrolled');
-      }
-    });
+  <footer id="partners" class="bg-black text-white " style="padding-top: 5%; padding-bottom: 5%;">
 
-    var typed = new Typed('#typed-output', {
-      strings: ['Whenever'],
-      typeSpeed: 100,
-      loop: true
-    });
-  </script>
+      <div class="flex w-full justify-between pb-52 px-4 md:px-10 lg:px-20 space-x-4">
+          <img src="../../static/assets/walking-chips.png" class="w-full md:w-1/4">
+          <img src="../../static/assets/walking-donut.png" class="w-full md:w-1/4">
+          <img src="../../static/assets/walking-money.png" class="w-full md:w-1/4">
+          <img src="../../static/assets/walking-pepe.png" class="w-full md:w-1/4">
+          <img src="../../static/assets/walk-straw.png" class="w-full md:w-1/4">
+      </div>
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+      <div class="first-col">
+          <img src="../../static/assets/kittchen2-logo.png" alt="Kittchens logo" class="mb-4">
+          <header class="text-lg font-semibold mb-2">Contact</header>
+          <ul class="mb-6">
+              <li>info@kittchen’s.com
+              </li>
+              <li>+234 813 918 8935</li>
+          </ul>
+          <header class="text-lg font-semibold mb-2">Socials</header>
+          <div class="socials flex space-x-4">
+             <a href="#"> <img src="../../static/assets/instagram.png" alt="Instagram" class="w-6 h-6"></a>
+              <a href="#"><img src="../../static/assets/facebook.png" alt="Facebook" class="w-6 h-6"></a>
+              <a href="#"><img src="../../static/assets/twiter.png" alt="Twitter" class="w-6 h-6"></a>
+              <a href="#"><img src="../../static/assets/linkedin.png" alt="LinkedIn" class="w-6 h-6"></a>
+          </div>
+          <div class="copyright-block pt-5">
+              <hr class="section-line">
+          <p class="copyright-text">© 2024 Kittchens. All rights reserved.</p>
+                </div>
+      </div>
+
+      <div class="second-col">
+          <header class="text-lg font-semibold mb-2">About Us</header>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-300">Company</a></li>
+            <li><a href="#" class="hover:text-gray-300">Careers</a></li>
+            <li><a href="#" class="hover:text-gray-300">Support</a></li>
+            <li><a href="#" class="hover:text-gray-300">FAQs</a></li>
+            <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+          </ul>
+        </div>
+      
+     
+     <div class="third-col">
+      <header class="text-lg font-semibold mb-2">Products</header>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-gray-300">Pricing</a></li>
+        <li><a href="#" class="hover:text-gray-300">Earnings</a></li>
+        <li><a href="#" class="hover:text-gray-300">Growth</a></li>
+      </ul>
+    </div>
+      
+       
+  <div class="fourth-col">
+      <header class="text-lg font-semibold mb-2">Partners</header>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-gray-300">Aidi Venture</a></li>
+        <li><a href="#" class="hover:text-gray-300">TAJBANK</a></li>
+        <li><a href="#" class="hover:text-gray-300">Megadel Africa</a></li>
+        <li><a href="#" class="hover:text-gray-300">SpeedMeals Culinary School</a></li>
+        <li><a href="#" class="hover:text-gray-300">Reddish Culinary School</a></li>
+      </ul>
+    </div>
+  
+      </div>
+  </footer>
+
+
+  <script src="../../static/js/index.js"></script>
 </body>
-</html>
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+{% include 'home/welcome_page.html' %}
+
+{% endblock content %}
