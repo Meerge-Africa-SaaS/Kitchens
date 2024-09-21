@@ -3,42 +3,32 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  width: 100%;
+}
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 130px;
 }
-
-nav {
-  transition: background-color 0.3s, color 0.3s;
+.navbar {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-nav .nav-scrolled {
-  background-color: white;
-  color: #000000;
-}
-
-.nav-scrolled .links a {
-  color: #000000;
+.navbar a {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
 }
-.download-btn {
-  color: #fd0000;
-  border-radius: 10px;
-  background: #ffffff;
-}
-.links a {
+.navbar button {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-  color: #ffffff;
 }
+
 .hero-bold-txt {
   font-family: Poppins;
   font-size: 55px;
@@ -68,7 +58,7 @@ nav .nav-scrolled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("assets/hero-img.png");
+  background-image: url("./assets/hero-img.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -290,4 +280,20 @@ nav .nav-scrolled {
   font-weight: 400;
   line-height: 24px;
   text-align: left;
+}
+
+@media (max-width: 576px) {
+  .second-sec {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-images .img {
+    width: 50%;
+  }
 }

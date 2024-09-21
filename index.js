@@ -1,30 +1,34 @@
-window.onload = () => {
-  const navbar = document.querySelector("nav");
-  const scrollTrigger = 50;
-
-  document.documentElement.style.scrollPaddingTop = "130px";
-
-  function handleScroll() {
-    if (window.scrollY > scrollTrigger) {
-      navbar.classList.add("nav-scrolled");
-    } else {
-      navbar.classList.remove("nav-scrolled");
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-  setTimeout(() => {
-    window.scrollTo(0, 100);
-    handleScroll();
-  }, 1000);
-};
-
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
+// Toggle mobile menu visibility when the hamburger menu is clicked
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
+
+const navbar = document.getElementById("navbar");
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("bg-white", "text-black");
+    navbar.classList.remove("bg-transparent", "text-white");
+  } else {
+    navbar.classList.add("bg-transparent", "text-white");
+    navbar.classList.remove("bg-white", "text-black");
+  }
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const menuBtn = document.getElementById("menu-btn");
+//   const mobileMenu = document.getElementById("mobile-menu");
+
+//   menuBtn.addEventListener("click", () => {
+//     mobileMenu.classList.toggle("hidden");
+//   });
+// });
 
 function showFAQ(faqId) {
   const faqAnswers = {
