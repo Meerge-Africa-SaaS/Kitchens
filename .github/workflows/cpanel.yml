@@ -16,8 +16,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:        
         # server: ${{ secrets.ftp_url }}
-        server: sftp.condueet.com
-        # username: ${{ secrets.ftp_user }}
-        username: osher@kittchens.condueet.com
+        server: s3420.mex1.stableserver.net
+        username: ${{ secrets.ftp_user }}
+        # username: osher@kittchens.condueet.com
         password: ${{ secrets.ftp_password }}
         port: 21
