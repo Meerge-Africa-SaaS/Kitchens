@@ -65,9 +65,22 @@ function showFAQ(faqId) {
   }
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   var typed = new Typed("#typed-output", {
+//     strings: ["&nbsp;How", "When", "Where"],
+//     typeSpeed: 100,
+//     backSpeed: 50,
+//     loop: true,
+//     showCursor: false,
+//   });
+// });
 document.addEventListener("DOMContentLoaded", function () {
   var typed = new Typed("#typed-output", {
-    strings: ["How", "When", "Where"],
+    strings: [
+      '<span style="    margin-left: -1px;">How</span>',  
+      "When", 
+      "Where"
+    ],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true,

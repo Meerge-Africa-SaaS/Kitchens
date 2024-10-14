@@ -186,7 +186,8 @@
     background: #000000;
     width: 100%;
     height: auto;
-    margin-top: 50%;
+    margin-top: calc(70% + 250px);
+
     padding: 40px;
   }
   .faq {
