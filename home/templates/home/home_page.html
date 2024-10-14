@@ -1,0 +1,366 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kittchens</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    
+    <!-- Typed.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+</head>
+{% endblock extra_css %}
+
+{% block content %}
+<body>
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="navbar fixed w-full p-4 z-10 bg-transparent text-white"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <div style="cursor: pointer">
+          <a href="#hero-sec"
+            ><img src="{% static 'assets/kittchen2-logo.png' %}" alt="kittchen's logo"
+          /></a>
+        </div>
+
+        <!-- Hamburger menu button (visible on small screens) -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              Increased
+              size
+              for
+              visibility
+              --
+            >
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Navbar links -->
+        <div class="hidden md:flex space-x-4">
+          <div class="space-x-10 mx-20 pt-3">
+            <a href="#products" class="hover:text-[#fd0000]">Products</a>
+            <a href="#" class="hover:text-[#fd0000]">Pricing</a>
+            <a href="#partners" class="hover:text-[#fd0000]">Partners</a>
+          </div>
+          <div>
+            <button
+              class="text-[#fd0000] text-center bg-white px-4 py-3 rounded-lg hover:bg-[#fd0000] hover:text-white"
+              style="width: 161px"
+            >
+              Download App
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu (hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden flex flex-col mt-4 space-y-2 text-center bg-gray-100 text-black py-4"
+      >
+        <a href="" class="block px-4 py-2 hover:bg-[#fd0000] hover:text-white"
+          >Products</a
+        >
+        <a href="#" class="block px-4 py-2 hover:bg-[#fd0000] hover:text-white"
+          >Pricing</a
+        >
+        <a href="#" class="block px-4 py-2 hover:bg-[#fd0000] hover:text-white"
+          >Partners</a
+        >
+      </div>
+    </nav>
+
+    <section id="hero-sec" class="flex flex-col items-center justify-center w-full bg-[url('{% static 'assets/hero-img.png' %}')] bg-cover bg-center h-screen pt-52">
+      <p class="hero-bold-txt">Experience your kind of taste</p>
+      <p class="hero-bold-txt">
+        <span style="color: #fd0000" id="typed-output"></span> you want it...
+      </p>
+      <p class="hero-sub-txt pt-5">
+        From our seasoned chefs on standby to your favorite restaurants, enjoy
+        good deals on great meals and pasteries
+      </p>
+      <div class="flex pt-6">
+        <img
+          class="mx-5"
+          src="{% static 'assets/app-buttons.png' %}"
+          alt="app store button"
+        />
+        <img src="{% static 'assets/playstore-button.png' %}" alt="google-play-btn">
+  
+      </div>
+    </section>
+    <section class="second-sec pt-20">
+      <p class="header">Download the app now!</p>
+      <img src="{% static 'assets/kittchen-app.png' %}" alt="mobile app image">
+      <img src="{% static 'assets/love-love.png' %}" class="icon icon1" alt="Icon 1">
+      <img src="{% static 'assets/wow-wow.png' %}" class="icon icon2" alt="Icon 2">
+      <div class="overlay-sec">
+        <div class="overlay-inner pt-16 pb-20">
+          <p id="products" class="header">Our Products/Channels</p>
+          <div class="services-block flex justify-around pt-16">
+            <div>
+              <img src="{% static 'assets/kittchen-pack.png' %}" alt="pasteries" />
+              <h2 class="header my-3">Kittchen’s Pastries</h2>
+              <p class="paragraph">
+                Delight your taste with the variety of our pastry offerings.
+                Visit our roadside tuck shop and grab a healthy bite on your way
+                to anywhere in your city.
+              </p>
+              <h2 style="text-align: left"><a href="#">Get the app</a></h2>
+            </div>
+            <div>
+              <img src="{% static 'assets/kittchen-gos.png' %}" alt="kittchens pack" />
+              <h2 class="header my-3">Kittchen’s Go</h2>
+              <p class="paragraph">
+                Deliver meals in your city and get paid for it. Join our team of
+                savvy delivery agents on standby to help move stuff from
+                favorite food outlets to customer doorsteps
+              </p>
+              <h2 class="" style="text-align: left">
+                <a href="#">Become A Rider</a>
+              </h2>
+            </div>
+            <div>
+              <img src="{% static 'assets/cloud-kittchens.png' %}" alt="cloud kittchens" />
+              <h2 class="header my-3">Cloud Kittchens</h2>
+              <p class="paragraph">
+                Seasoned chefs use our state of the art on-site Kittchen’s to
+                run their business. Take advantage of our exquisite locations on
+                a plan that works for you.
+              </p>
+              <h2 class="" style="text-align: left">
+                <a href="#">Book A Space</a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p class="overlay-txt my-7">Tasty meals, just around the corner.</p>
+        <div class="flex pt-6">
+          <img
+            class="mx-5"
+           src="{% static 'assets/app-buttons.png' %}"
+            alt="app store button"
+          />
+          <img src="{% static 'assets/playstore-button.png' %}" alt="google-play-btn" />
+        </div>
+      </div>
+    </section>
+    <div style="height: 50vh"></div>
+    <section class="third-sec bg-black w-full " style="height: 100vh ">
+      <section
+        style="background: #fd0000"
+        class="faq flex rounded-lg w-11/12 mx-auto p-6 space-x-6 mt-[-150px] h-[700px]"
+      >
+        <div class="faq-list w-1/3 space-y-4">
+          <header class="text-xl font-bold text-white mb-4">You asked.</header>
+          <ul class="space-y-4">
+            <li>
+              <button
+                class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
+                data-faq-id="1"
+                onclick="showFAQ(1)"
+                aria-expanded="false"
+                aria-controls="faq1"
+              >
+                <span>What is Cloud Kittchen’s?</span>
+                <img class="pl-2"  src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+              </button>
+            </li>
+            <li>
+              <button
+                class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
+                data-faq-id="2"
+                onclick="showFAQ(2)"
+                aria-expanded="false"
+                aria-controls="faq2"
+              >
+                <span>How does the Kittchen’s app work?</span>
+                <img class="pl-2"  src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+              </button>
+            </li>
+            <li>
+              <button
+                class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
+                data-faq-id="3"
+                onclick="showFAQ(3)"
+                aria-expanded="false"
+                aria-controls="faq3"
+              >
+                <span>Where can I find Kittchen’s Pastries?</span>
+                <img class="pl-2"  src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+              </button>
+            </li>
+            <li>
+              <button
+                class="faq-item inline-block w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
+                data-faq-id="4"
+                onclick="showFAQ(4)"
+                aria-expanded="false"
+                aria-controls="faq4"
+              >
+                <span>How do I become a rider on Kittchen’s Go?</span>
+                <img class="pl-2"  src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+              </button>
+            </li>
+            <li>
+              <button
+                class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
+                data-faq-id="5"
+                onclick="showFAQ(5)"
+                aria-expanded="false"
+                aria-controls="faq5"
+              >
+                <span>Can I list my food spot on Kittchen’s?</span>
+                <img class="pl-2" src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="faq-response-container">
+          <div class="faq-response-content">
+            <h2 class="text-5xl font-bold mb-4" style="color: #fd0000">
+              We replied:
+            </h2>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer
+      id="partners"
+      class="bg-black text-white"
+      style="padding-top: 5%; padding-bottom: 5%"
+    >
+      <div
+        class="flex footer-images w-full justify-between pb-52 px-4 md:px-10 lg:px-20 space-x-4"
+      >
+      <img src="{% static 'assets/walking-chips.png' %}" class="w-full md:w-1/4">
+      <img src="{% static 'assets/walking-donut.png' %}" class="w-full md:w-1/4">
+      <img src="{% static 'assets/walking-money.png' %}" class="w-full md:w-1/4">
+      <img src="{% static 'assets/walking-pepe.png' %}" class="w-full md:w-1/4">
+      <img src="{% static 'assets/walk-straw.png' %}" class="w-full md:w-1/4">
+      </div>
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6"
+      >
+        <div class="first-col">
+          <img
+            src="{% static 'assets/kittchen2-logo.png' %}"
+            alt="Kittchens logo"
+            class="mb-4"
+          />
+          <header class="text-lg font-semibold mb-2">Contact</header>
+          <ul class="mb-6">
+            <li>info@kittchens.com</li>
+            <li>+234 813 918 8935</li>
+          </ul>
+          <header class="text-lg font-semibold mb-2">Socials</header>
+          <div class="socials flex space-x-4">
+            <a href="#">
+              <img
+                src="{% static 'assets/instagram.png' %}"
+                alt="Instagram"
+                class="w-6 h-6"
+            /></a>
+            <a href="#"
+              ><img
+               src=  "{% static 'assets/facebook.png' %}"
+                alt="Facebook"
+                class="w-6 h-6"
+            /></a>
+            <a href="#"
+              ><img src="{% static 'assets/twiter.png' %}" alt="Twitter" class="w-6 h-6"
+            /></a>
+            <a href="#"
+              ><img
+                src="{% static 'assets/linkedin.png' %}"
+                alt="LinkedIn"
+                class="w-6 h-6"
+            /></a>
+          </div>
+          <div class="copyright-block pt-5">
+            <hr class="section-line" />
+            <p class="copyright-text">© 2024 Kittchens. All rights reserved.</p>
+          </div>
+        </div>
+
+        <div class="second-col">
+          <header class="text-lg font-semibold mb-2">About Us</header>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-300">Company</a></li>
+            <li><a href="#" class="hover:text-gray-300">Careers</a></li>
+            <li><a href="#" class="hover:text-gray-300">Support</a></li>
+            <li><a href="#" class="hover:text-gray-300">FAQs</a></li>
+            <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="third-col">
+          <header class="text-lg font-semibold mb-2">Products</header>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-300">Pricing</a></li>
+            <li><a href="#" class="hover:text-gray-300">Earnings</a></li>
+            <li><a href="#" class="hover:text-gray-300">Growth</a></li>
+          </ul>
+        </div>
+
+        <div class="fourth-col">
+          <header class="text-lg font-semibold mb-2">Partners</header>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-300">Aidi Venture</a></li>
+            <li><a href="#" class="hover:text-gray-300">TAJBANK</a></li>
+            <li><a href="#" class="hover:text-gray-300">Megadel Africa</a></li>
+            <li>
+              <a href="#" class="hover:text-gray-300"
+                >SpeedMeals Culinary School</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300"
+                >Reddish Culinary School</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../static/js/index.js"></script>
+  </body>
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+{% include 'home/welcome_page.html' %}
+
+{% endblock content %}
