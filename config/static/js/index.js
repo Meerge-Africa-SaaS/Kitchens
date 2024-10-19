@@ -33,19 +33,13 @@ window.addEventListener("scroll", () => {
 function showFAQ(faqId, typingSpeed = 50, defaultPosition = false) {
   console.log("faqId:", faqId)
   const faqAnswers = {
-    0: "Got questions? We’ve got answers! Check out some of the most frequently asked questions from our enthusiastic users on the timeline. For additional inquiries, don’t hesitate to email us at info@kittchens.com.",
-    
-    1: "Our state-of-the-art kitchen facilities are located in strategic city spots, equipped with modern cooking gadgets and utensils. Seasoned chefs use these bespoke spaces to prepare delicious meals in a great ambiance, utilizing the best tools available. Chefs are on standby to serve customers who request meals at their convenience.",
-    
-    2: "With Kittchen’s app, you can order pastries or request food delivery from our cloud kitchens or your favorite restaurant, no matter where you are. Explore options for customizing your orders and making tailored reservations right from your smartphone.",
-    
-    3: "Kittchen’s Pastries outlets are coming to every major street in your neighborhood! From mouthwatering burgers to delicious pies, we’ll be right around the corner whenever you want to snack and relax. It’s less junk food when it’s healthy.",
-    
-    4: "Food outlets and enthusiasts can use Kittchen’s logistics service to transport food items and fulfill delivery orders within your city and across the country. Cyclists and truck drivers can join our team of savvy drivers to earn some extra cash. Download the mobile app now to get started.",
-    
-    5: "Absolutely! You can enlist your restaurant or food outlet on Meerge, our management system for food businesses. Manage all orders, monitor your inventory, source ingredients, and organize your business operations—all in one place."
-  };
-  
+    0: " We have answers for you! Explore some of the most asked questions from our eager users on the timeline. Feel free to also send us a mail for further inquiry on info@kittchens.com ",
+     1: "This is our ready-to-use state of the art kitchen facility at strategic city spots. It is equipped with modern cooking gadgets and utensils. Seasoned chefs use our bespoke spaces to prepare tasty meals in a great ambience using the best tools at their disposal. Chefs are on standby to serve their customers who request meals at their convenience.",
+     2: "You can use Kittchen’s app to order pastries or request food delivery from our cloud kittchen’s, or from your favorite restaurant from wherever you are. Explore options from customizing your orders and making tailored reservations on your smartphone.",
+     3: "Our Kittchen’s Pastries outlets is coming to every major street in your neighborhood. From mouthful burgers to tasty pies, we will be right around the corner, whenever you just want to snack and chill. It is less junk, when it is healthy.",
+     4: "Food outlets and lovers use our Kittchen’s logistics service to transport food items and fulfil delivery orders in your city and across the country. Cyclist and truck drivers can join our team of savvy drivers to make some cool cash. Download the mobile app now to get started.",
+     5: "Absolutely! Enlist your restaurant or food outlet on Meerge, our management system for food businesses. Manage all orders, monitor your inventory, source ingredients and organize your business operations all in one place.",
+   };
   const responseContainer = document.querySelector(".faq-response-content");
 
   // Clear the container before typing starts
