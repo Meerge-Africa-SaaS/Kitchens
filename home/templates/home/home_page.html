@@ -12,7 +12,8 @@ Delete the line below if you're just getting started and want to remove the welc
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kittchens</title>
+    <title>Kittchen's | Kittchen's</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/kittchen2-logo.png' %}">
     
     <!-- Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -189,11 +190,11 @@ Delete the line below if you're just getting started and want to remove the welc
               <button
                 class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
                 data-faq-id="1"
-                onclick="showFAQ(1)"
+                onclick="showFAQ(1); setTimeout(() => { document.getElementById('typed-answer').style.fontSize = '1.5rem'; document.querySelector('.faq-response-content').scrollTop = document.querySelector('.faq-response-content').scrollHeight; }, 30)"
                 aria-expanded="false"
                 aria-controls="faq1"
               >
-                <span>What is Cloud Kittchen’s?</span>
+                <span>What is Cloud Kittchen's?</span>
                 <img class="pl-2"  src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
               </button>
             </li>
@@ -201,7 +202,7 @@ Delete the line below if you're just getting started and want to remove the welc
               <button
                 class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
                 data-faq-id="2"
-                onclick="showFAQ(2)"
+                onclick="showFAQ(2); setTimeout(() => { document.getElementById('typed-answer').style.fontSize = '1.5rem'; document.querySelector('.faq-response-content').scrollTop = document.querySelector('.faq-response-content').scrollHeight; }, 30)"
                 aria-expanded="false"
                 aria-controls="faq2"
               >
@@ -213,7 +214,7 @@ Delete the line below if you're just getting started and want to remove the welc
               <button
                 class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
                 data-faq-id="3"
-                onclick="showFAQ(3)"
+                onclick="showFAQ(3); setTimeout(() => { document.getElementById('typed-answer').style.fontSize = '1.4rem'; document.querySelector('.faq-response-content').scrollTop = document.querySelector('.faq-response-content').scrollHeight; }, 30)"
                 aria-expanded="false"
                 aria-controls="faq3"
               >
@@ -225,7 +226,7 @@ Delete the line below if you're just getting started and want to remove the welc
               <button
                 class="faq-item inline-block w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
                 data-faq-id="4"
-                onclick="showFAQ(4)"
+                onclick="showFAQ(4); setTimeout(() => { document.getElementById('typed-answer').style.fontSize = '1.5rem'; document.querySelector('.faq-response-content').scrollTop = document.querySelector('.faq-response-content').scrollHeight; }, 30)"
                 aria-expanded="false"
                 aria-controls="faq4"
               >
@@ -237,7 +238,7 @@ Delete the line below if you're just getting started and want to remove the welc
               <button
                 class="faq-item w-full text-left text-white hover:text-gray-200 flex justify-between items-center"
                 data-faq-id="5"
-                onclick="showFAQ(5)"
+                onclick="showFAQ(5); setTimeout(() => { document.getElementById('typed-answer').style.fontSize = '1.5rem'; document.querySelector('.faq-response-content').scrollTop = document.querySelector('.faq-response-content').scrollHeight; }, 30)"
                 aria-expanded="false"
                 aria-controls="faq5"
               >
