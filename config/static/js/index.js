@@ -44,7 +44,7 @@ function showFAQ(faqId, typingSpeed = 50, defaultPosition = false) {
 
   // Clear the container before typing starts
   responseContainer.innerHTML = `
-    <h2 class="text-5xl font-bold mb-4" style="color:#fd0000">${defaultPosition ? "You've got question for us?" : "We replied:"}</h2>
+    <h2 class="text-5xl font-bold mb-4" style="color:#fd0000">${defaultPosition ? "We replied:" : "We replied:"}</h2>
     <p class="text-gray-700 mt-10" id="typed-answer"></p>
   `;
 
