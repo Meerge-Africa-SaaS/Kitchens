@@ -13,9 +13,13 @@ Delete the line below if you're just getting started and want to remove the welc
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kittchen's | Kittchen's</title>
-    <link rel="icon" type="image/png" href="{% static 'assets/kittchen2-logo.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/kittchen2-logo.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'assets/kittchen2-logo.png' %}" sizes="16x16">
+    <link rel="apple-touch-icon" href="{% static 'assets/kittchen2-logo.png' %}">
+    <link rel="shortcut icon" href="{% static 'assets/kittchen2-logo.png' %}">
     
     <!-- Tailwind CSS from CDN -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Local CSS -->
@@ -256,7 +260,7 @@ Delete the line below if you're just getting started and want to remove the welc
               We replied:
             </h2>
           </div>
-          <img class="absolute bottom-0 right-0 pl-2 -mb-[-3] -mr-[-3]" src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
+          <img class="absolute bottom-0 right-0 p-4" src="{% static 'assets/love-icon.png' %}" alt="Love Icon" />
         </div>
         
         
