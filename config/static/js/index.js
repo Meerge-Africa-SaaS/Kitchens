@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
 function showFAQ(faqId, typingSpeed = 50, defaultPosition = false) {
   console.log("faqId:", faqId)
   const faqAnswers = {
-    0: " We have answers for you! Explore some of the most asked questions from our eager users on the timeline. Feel free to also send us a mail for further inquiry on info@kittchens.com ",
+    0: " You've got questions for us? We have answers for you! Explore some of the most asked questions from our eager users on the timeline. Select any question to get a response. Also, feel free to send us a mail for more inquiries on info@kittchens.com  ",
      1: "This is our ready-to-use state of the art kitchen facility at strategic city spots. It is equipped with modern cooking gadgets and utensils. Seasoned chefs use our bespoke spaces to prepare tasty meals in a great ambience using the best tools at their disposal. Chefs are on standby to serve their customers who request meals at their convenience.",
      2: "You can use Kittchen’s app to order pastries or request food delivery from our cloud kittchen’s, or from your favorite restaurant from wherever you are. Explore options from customizing your orders and making tailored reservations on your smartphone.",
      3: "Our Kittchen’s Pastries outlets is coming to every major street in your neighborhood. From mouthful burgers to tasty pies, we will be right around the corner, whenever you just want to snack and chill. It is less junk, when it is healthy.",
